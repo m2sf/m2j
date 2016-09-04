@@ -88,7 +88,7 @@ public Result<ProtoLexer, Status> newLexer (String filename);
  * the symbol's token.
  *
  * pre-conditions:
- * o  lexer instance must have been created with constructor ProtoLexer
+ * o  lexer instance must have been created with constructor newLexer()
  *    so that it is associated with an input source file
  *
  * post-conditions:
@@ -116,7 +116,7 @@ public Token readSym();
  *    so that it is associated with an input source file
  *
  * post-conditions:
- * o  character code of lookahead character or EOF is returned
+ * o  token of lookahead symbol is returned
  * o  current reading position and line and column counters are NOT updated
  * o  file status is set to SUCCESS
  *
@@ -131,7 +131,8 @@ public Token nextSym ();
 /* --------------------------------------------------------------------------
  * method consumeSym()
  * --------------------------------------------------------------------------
- * Consumes the lookahead symbol and returns the new lookahead symbol.
+ * Consumes the lookahead symbol and returns the token of the new lookahead
+ * symbol.
  * ----------------------------------------------------------------------- */
 
 public Token consumeSym ();

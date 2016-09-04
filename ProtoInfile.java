@@ -192,7 +192,7 @@ public String sourceForLine (int line);
  * Consumes the current lookahead character, advancing the current reading
  * position, updating line and column counter and returns the character code
  * of the new lookahead character that follows the consumed character.
- * Returns EOF if the lookahead character lies beyond the end of infile.
+ * Returns EOT if the lookahead character lies beyond the end of infile.
  *
  * pre-conditions:
  * o  infile must be open
@@ -213,7 +213,7 @@ public int consumeChar ();
  * method nextChar()
  * ---------------------------------------------------------------------------
  * Reads the lookahead character from infile without advancing the current
- * reading position and returns its character code.  Returns EOF if the
+ * reading position and returns its character code.  Returns EOT if the
  * lookahead character lies beyond the end of infile.
  *
  * pre-conditions:
@@ -235,7 +235,7 @@ public int nextChar ();
  * method la2Char()
  * ---------------------------------------------------------------------------
  * Reads the second lookahead character from infile without advancing the
- * current reading position and returns its character code.  Returns EOF
+ * current reading position and returns its character code.  Returns EOT
  * if the second lookahead character lies beyond the end of infile.
  *
  * pre-conditions:
@@ -310,7 +310,7 @@ public int currentColumn ();
  *
  * post-conditions:
  * o  associated file is closed
- * o  INFILE_STATUS_SUCCESS is passed back in status
+ * o  INFILE_STATUS_SUCCESS is returned
  *
  * error-conditions:
  * o  none
