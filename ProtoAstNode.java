@@ -48,11 +48,6 @@ package org.m2sf.m2j;
 
 interface ProtoAstNode {
 
-public enum NodeType {
-
-} /* NodeType */
-
-
 /* --------------------------------------------------------------------------
  * method emptyNode()
  * --------------------------------------------------------------------------
@@ -84,7 +79,7 @@ public static final Result<ProtoAstNode, Status> emptyNode ();
  * ----------------------------------------------------------------------- */
 
 public Result<ProtoAstNode, Status>
-  newNode (NodeType nodeType, ProtoAstNode... subnodes);
+  newNode (ProtoAstNodeType nodeType, ProtoAstNode... subnodes);
 
 
 /* --------------------------------------------------------------------------
@@ -95,7 +90,7 @@ public Result<ProtoAstNode, Status>
  * ----------------------------------------------------------------------- */
 
 public Result<ProtoAstNode, Status>
-  newListNode (NodeType nodeType, NodeList list);
+  newListNode (ProtoAstNodeType nodeType, NodeList list);
 
 
 /* --------------------------------------------------------------------------
@@ -106,7 +101,7 @@ public Result<ProtoAstNode, Status>
  * ----------------------------------------------------------------------- */
 
 public Result<ProtoAstNode, Status>
-  newTerminalNode (NodeType nodeType, String value);
+  newTerminalNode (ProtoAstNodeType nodeType, String value);
 
 
 /* --------------------------------------------------------------------------
@@ -117,7 +112,7 @@ public Result<ProtoAstNode, Status>
  * ----------------------------------------------------------------------- */
 
 public Result<ProtoAstNode, Status>
-  newTerminalListNode (NodeType nodeType, TermList list);
+  newTerminalListNode (ProtoAstNodeType nodeType, TermList list);
 
 
 /* --------------------------------------------------------------------------
@@ -126,7 +121,7 @@ public Result<ProtoAstNode, Status>
  * Returns the node type of node, or null if node is null.
  * ----------------------------------------------------------------------- */
 
-public NodeType nodeTypeOf(ProtoAstNode node);
+public ProtoAstNodeType nodeTypeOf(ProtoAstNode node);
 
 
 /* --------------------------------------------------------------------------
