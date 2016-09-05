@@ -48,13 +48,15 @@ package org.m2sf.m2j;
 import java.util.enumset;
 
 
+interface ProtoProduction {
+
 /* --------------------------------------------------------------------------
- * Enumeration type ProtoProduction
+ * type Production
  * --------------------------------------------------------------------------
  * Enumerated production values representing Modula-2 non-terminal symbols.
  * ----------------------------------------------------------------------- */
 
-public enum ProtoProduction {
+public enum Production {
   /* Productions with unique FIRST and FOLLOW sets */
 
   DEFINITION_MODULE,        /* definitionModule */
@@ -136,13 +138,7 @@ public enum ProtoProduction {
   /* Dependent on option --no-variant-records */
   TYPE_DECLARATION_TAIL;    /* typeDeclarationTail */
 
-
-/* FIRST_OPTION_DEPENDENT = FORMAL_TYPE
-   LAST_OPTION_DEPENDENT = TYPE_DECLARATION_TAIL
-   FIRST_CONST_PARAM_DEPENDENT = FORMAL_TYPE
-   LAST_CONST_PARAM_DEPENDENT = ATTRIB_FORMAL_PARAMS
-   FIRST_NO_VARIANT_REC_DEPENDENT = TYPE_DECLARATION_TAIL
-   LAST_NO_VARIANT_REC_DEPENDENT = TYPE_DECLARATION_TAIL   */
+} /* Production */
 
 
 /* --------------------------------------------------------------------------
@@ -153,12 +149,39 @@ public int count ();
 
 
 /* --------------------------------------------------------------------------
+ * method isOptionDependent(p)
+ * --------------------------------------------------------------------------
+ * Returns true if p is dependent on any compiler option, else false.
+ * ----------------------------------------------------------------------- */
+
+public boolean isOptionDependent (Production p);
+
+
+/* --------------------------------------------------------------------------
+ * method isConstParamDependent(p)
+ * --------------------------------------------------------------------------
+ * Returns true if p is dependent on CONST parameter option, else false.
+ * ----------------------------------------------------------------------- */
+
+public boolean isConstParamDependent (Production p);
+
+
+/* --------------------------------------------------------------------------
+ * method isVariantRecordDependent(p)
+ * --------------------------------------------------------------------------
+ * Returns true if p is dependent on variant record type option, else false.
+ * ----------------------------------------------------------------------- */
+
+public boolean isVariantRecordDependent (Production p);
+
+
+/* --------------------------------------------------------------------------
  * method FIRST(p)
  * --------------------------------------------------------------------------
  * Returns a tokenset with the FIRST set of production p.
  * ----------------------------------------------------------------------- */
 
-public EnumSet<ProtoProduction> FIRST (ProtoProduction p);
+public EnumSet<Production> FIRST (Production p);
 
 
 /* --------------------------------------------------------------------------
@@ -167,7 +190,7 @@ public EnumSet<ProtoProduction> FIRST (ProtoProduction p);
  * Returns a tokenset with the FOLLOW set of production p.
  * ----------------------------------------------------------------------- */
 
-public EnumSet<ProtoProduction> FOLLOW (ProtoProduction p);
+public EnumSet<Production> FOLLOW (Production p);
 
 
 /* --------------------------------------------------------------------------
@@ -176,7 +199,7 @@ public EnumSet<ProtoProduction> FOLLOW (ProtoProduction p);
  * Returns a string with a human readable name for production p.
  * ----------------------------------------------------------------------- */
 
-public String nameForProduction (ProtoProduction p);
+public String nameForProduction (Production p);
 
 
 } /* ProtoProduction */
