@@ -111,9 +111,9 @@ public enum Token {
   
   /* Synonyms */
   
-  /*  '&' is a synonym for AND and mapped to TOKEN_AND */
-  /*  '~' is a synonym for NOT and mapped to TOKEN_NOT */
-  /* '<>' is a synonym for '#' and mapped to TOKEN_NOTEQUAL */
+  /*  '&' is a synonym for AND, mapped to token AND */
+  /*  '~' is a synonym for NOT, mapped to token NOT */
+  /* '<>' is a synonym for '#', mapped to token NOTEQUAL */
 
 } /* Token */
 
