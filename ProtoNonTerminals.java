@@ -22,7 +22,7 @@
  *
  * @file
  *
- * ProtoNonTerminal.java
+ * ProtoNonTerminals.java
  *
  * Public interface for Non-Terminal's FIRST and FOLLOW set lookup.
  *
@@ -48,7 +48,7 @@ package org.m2sf.m2j;
 import java.util.enumset;
 
 
-interface ProtoNonTerminal {
+interface ProtoNonTerminals {
 
 /* --------------------------------------------------------------------------
  * type Production
@@ -181,7 +181,7 @@ public boolean isVariantRecordDependent (Production p);
  * Returns a tokenset with the FIRST set of production p.
  * ----------------------------------------------------------------------- */
 
-public EnumSet<ProtoTerminal.Token> FIRST (Production p);
+public EnumSet<ProtoTerminals.Token> FIRST (Production p);
 
 
 /* --------------------------------------------------------------------------
@@ -190,7 +190,7 @@ public EnumSet<ProtoTerminal.Token> FIRST (Production p);
  * Returns a tokenset with the FOLLOW set of production p.
  * ----------------------------------------------------------------------- */
 
-public EnumSet<ProtoTerminal.Token> FOLLOW (Production p);
+public EnumSet<ProtoTerminals.Token> FOLLOW (Production p);
 
 
 /* --------------------------------------------------------------------------
@@ -202,6 +202,6 @@ public EnumSet<ProtoTerminal.Token> FOLLOW (Production p);
 public String nameForProduction (Production p);
 
 
-} /* ProtoNonTerminal */
+} /* ProtoNonTerminals */
 
 /* END OF FILE */

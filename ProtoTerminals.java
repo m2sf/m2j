@@ -22,7 +22,7 @@
  *
  * @file
  *
- * ProtoTerminal.java
+ * ProtoTerminals.java
  *
  * Public interface for Terminal's token and lexeme lookup.
  *
@@ -45,7 +45,7 @@
 
 package org.m2sf.m2j;
 
-interface ProtoTerminal {
+interface ProtoTerminals {
 
 /* ---------------------------------------------------------------------------
  * type Token
@@ -202,6 +202,6 @@ public static String lexemeForSpecialSymbol (Token token);
 public String nameForToken (Token token);
 
 
-} /* ProtoTerminal */
+} /* ProtoTerminals */
 
 /* END OF FILE */
