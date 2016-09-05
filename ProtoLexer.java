@@ -112,7 +112,7 @@ public Token readSym();
  * then returns the symbol's token.
  *
  * pre-conditions:
- * o  lexer instance must have been created with constructor ProtoLexer
+ * o  lexer instance must have been created with constructor newLexer()
  *    so that it is associated with an input source file
  *
  * post-conditions:
