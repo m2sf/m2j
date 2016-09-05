@@ -181,7 +181,7 @@ public boolean isVariantRecordDependent (Production p);
  * Returns a tokenset with the FIRST set of production p.
  * ----------------------------------------------------------------------- */
 
-public EnumSet<Production> FIRST (Production p);
+public EnumSet<ProtoToken.Token> FIRST (Production p);
 
 
 /* --------------------------------------------------------------------------
@@ -190,7 +190,7 @@ public EnumSet<Production> FIRST (Production p);
  * Returns a tokenset with the FOLLOW set of production p.
  * ----------------------------------------------------------------------- */
 
-public EnumSet<Production> FOLLOW (Production p);
+public EnumSet<ProtoToken.Token> FOLLOW (Production p);
 
 
 /* --------------------------------------------------------------------------
