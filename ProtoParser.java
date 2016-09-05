@@ -71,7 +71,7 @@ public Status checkSyntaxForMod (String filename);
  * Parses a Modula-2 .DEF file represented by filename and returns an AST.
  * ----------------------------------------------------------------------- */
 
-public AST parseDef (String filename);
+public ProtoAstNode parseDef (String filename);
 
 
 /* --------------------------------------------------------------------------
@@ -80,7 +80,7 @@ public AST parseDef (String filename);
  * Parses a Modula-2 .MOD file represented by filename and returns an AST.
  * ----------------------------------------------------------------------- */
 
-public AST parseMod (String filename);
+public ProtoAstNode parseMod (String filename);
 
 
 
