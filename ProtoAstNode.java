@@ -48,136 +48,135 @@ package org.m2sf.m2j;
 
 interface ProtoAstNode {
 
-/* --------------------------------------------------------------------------
+/* ---------------------------------------------------------------------------
  * method emptyNode()
- * --------------------------------------------------------------------------
+ * ---------------------------------------------------------------------------
  * Returns the empty node singleton.
- * ----------------------------------------------------------------------- */
+ * ------------------------------------------------------------------------ */
 
 public static final Result<ProtoAstNode, Status> emptyNode ();
 
 
-/* --------------------------------------------------------------------------
- * method newNode(nodeType, subnode0, subnode1, subnode2, ...)
- * --------------------------------------------------------------------------
- * Allocates a new branch node of the given node type, stores the subnodes of
- * the argument list in the node and returns the node, or NULL on failure.
+/* ---------------------------------------------------------------------------
+ * constructor newNode(nodeType, subnode0, subnode1, subnode2, ...)
+ * ---------------------------------------------------------------------------
+ * Creates new branch node of the given node type, stores the subnodes of
+ * the argument list in the node and returns the node, or null on failure.
  *
  * pre-conditions:
  * o  node_type must be a valid node type
- * o  a NULL terminated argument list of valid ast nodes must be passed
+ * o  a non-empty list of valid ast nodes must be passed
  *    and type and number of subnodes must match the given node type.
  *
  * post-conditions:
- * o  newly allocated and populated ast node is returned
+ * o  newly created ast node is returned
  *
  * error-conditions:
- * o  if allocation fails, no node is allocated and NULL is returned
- * o  if node_type is invalid, no node is allocated and NULL is returned
+ * o  if node_type is invalid, no node is created and null is returned
  * o  if type and number of subnodes does not match the given node type,
- *    no node is allocated and NULL is returned
- * ----------------------------------------------------------------------- */
+ *    no node is created and null is returned
+ * ------------------------------------------------------------------------ */
 
 public Result<ProtoAstNode, Status>
   newNode (ProtoAstNodeType nodeType, ProtoAstNode... subnodes);
 
 
-/* --------------------------------------------------------------------------
+/* ---------------------------------------------------------------------------
  * method newListNode(nodeType, nodeList)
- * --------------------------------------------------------------------------
+ * ---------------------------------------------------------------------------
  * Allocates a new branch node of the given node type, stores the subnodes of
- * the given node list in the node and returns the node, or NULL on failure.
- * ----------------------------------------------------------------------- */
+ * the given node list in the node and returns the node, or null on failure.
+ * ------------------------------------------------------------------------ */
 
 public Result<ProtoAstNode, Status>
   newListNode (ProtoAstNodeType nodeType, NodeList list);
 
 
-/* --------------------------------------------------------------------------
+/* ---------------------------------------------------------------------------
  * method newTerminalNode(nodeType, value)
- * --------------------------------------------------------------------------
+ * ---------------------------------------------------------------------------
  * Allocates a new terminal node of the given node type, stores the given
- * terminal value in the node and returns the node, or NULL on failure.
- * ----------------------------------------------------------------------- */
+ * terminal value in the node and returns the node, or null on failure.
+ * ------------------------------------------------------------------------ */
 
 public Result<ProtoAstNode, Status>
   newTerminalNode (ProtoAstNodeType nodeType, String value);
 
 
-/* --------------------------------------------------------------------------
+/* ---------------------------------------------------------------------------
  * method newTerminalListNode(nodeType, terminalValueList)
- * --------------------------------------------------------------------------
+ * ---------------------------------------------------------------------------
  * Allocates a new terminal node of the given node type, stores the values of
  * the given value list in the node and returns the node, or NULL on failure.
- * ----------------------------------------------------------------------- */
+ * ------------------------------------------------------------------------ */
 
 public Result<ProtoAstNode, Status>
   newTerminalListNode (ProtoAstNodeType nodeType, TermList list);
 
 
-/* --------------------------------------------------------------------------
+/* ---------------------------------------------------------------------------
  * method nodeTypeOf(node)
- * --------------------------------------------------------------------------
+ * ---------------------------------------------------------------------------
  * Returns the node type of node, or null if node is null.
- * ----------------------------------------------------------------------- */
+ * ------------------------------------------------------------------------ */
 
 public ProtoAstNodeType nodeTypeOf(ProtoAstNode node);
 
 
-/* --------------------------------------------------------------------------
+/* ---------------------------------------------------------------------------
  * method subnodeCountOf(node)
- * --------------------------------------------------------------------------
+ * ---------------------------------------------------------------------------
  * Returns the number of subnodes or values of node. 
- * ----------------------------------------------------------------------- */
+ * ------------------------------------------------------------------------ */
 
 public int subnodeCountOf(ProtoAstNode node);
 
 
-/* --------------------------------------------------------------------------
+/* ---------------------------------------------------------------------------
  * method subnodeForIndex(node, index)
- * --------------------------------------------------------------------------
+ * ---------------------------------------------------------------------------
  * Returns the subnode of node with the given index or null if no subnode of
  * the given index is stored in node.
- * ----------------------------------------------------------------------- */
+ * ------------------------------------------------------------------------ */
 
 public Result<ProtoAstNode, status>
   subnodeForIndex(ProtoAstNode node, int index);
 
 
-/* --------------------------------------------------------------------------
+/* ---------------------------------------------------------------------------
  * method valueForIndex(node, index)
- * --------------------------------------------------------------------------
+ * ---------------------------------------------------------------------------
  * Returns the value stored at the given index in a terminal node,
  * or NULL if the node does not store any value at the given index.
- * ----------------------------------------------------------------------- */
+ * ------------------------------------------------------------------------ */
 
 public String valueForIndex (ProtoAstNode node, int index);
 
 
-/* --------------------------------------------------------------------------
+/* ---------------------------------------------------------------------------
  * convenience method value(node)
- * --------------------------------------------------------------------------
+ * ---------------------------------------------------------------------------
  * Invokes valueForIndex() with an index of zero. 
- * ----------------------------------------------------------------------- */
+ * ------------------------------------------------------------------------ */
 
 public String value (ProtoAstNode node);
 
 
-/* --------------------------------------------------------------------------
+/* ---------------------------------------------------------------------------
  * method replaceSubnode(inNode, atIndex, withSubnode)
- * --------------------------------------------------------------------------
+ * ---------------------------------------------------------------------------
  * Replaces a subnode and returns the replaced node, or null on failure.
- * ----------------------------------------------------------------------- */
+ * ------------------------------------------------------------------------ */
 
 public Result<ProtoAstNode, Status>
   replaceSubnode (ProtoAstNode inNode, int atIndex, ProtoAstNode withSubnode);
 
 
-/* --------------------------------------------------------------------------
+/* ---------------------------------------------------------------------------
  * method replaceValue(inNode, atIndex, withValue)
- * --------------------------------------------------------------------------
+ * ---------------------------------------------------------------------------
  * Replaces a value and returns the replaced value, or null on failure.
- * ----------------------------------------------------------------------- */
+ * ------------------------------------------------------------------------ */
 
 public String
   replaceValue (ProtoAstNode inNode, int atIndex, String withValue);
