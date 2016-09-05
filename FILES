@@ -64,6 +64,23 @@ Parser.java
   reports warnings and errors using the Diagnostics class
   builds an abstract syntax tree using the AST class
 
+ProtoAstNode.java
+  interface for the abstract syntax tree class
+
+AstNode.java
+  abstract syntax tree class
+  provides an API to build tree nodes of different node types
+  used by the parser class to build an abstract syntax tree
+
+ProtoAstNodeType.java
+  interface for abstract syntax tree node types
+
+AstNodeType.java
+  abstract syntax tree node types class
+  defines enumerated values representing tree node types
+  provides an API for tree node integrity checks
+  used by the abstract syntax tree class when creating tree nodes
+
 ProtoDiagnostics.java
   interface for the diagnostics class
 
