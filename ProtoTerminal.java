@@ -107,7 +107,7 @@ public enum Token {
   RIGHT_BRACKET,   /* ']'  */
   LEFT_BRACE,      /* '{'  */
   RIGHT_BRACE,     /* '}'  */
-  END_OF_FILE
+  END_OF_FILE;
   
   /* Synonyms */
   
