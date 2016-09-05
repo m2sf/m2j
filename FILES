@@ -12,6 +12,9 @@ LICENSE
   
 FILES
   a summary of files and their purpose, (this file)
+  
+m2j-grammar.gll
+  a formal LL(1) grammar for Modula-2 used by the project
 
 
 (2) Source Code
