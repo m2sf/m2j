@@ -55,7 +55,7 @@ interface IAstWriter {
  * of characters written and a status code.
  * ------------------------------------------------------------------------ */
 
-Result<int /* chars written */, IOStatus>
+public static Result<int /* chars written */, IOStatus>
   WriteAst (String path, ProtoAstNode ast);
 
 
