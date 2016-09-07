@@ -45,7 +45,7 @@
 
 package org.m2sf.m2j;
 
-interface IAstWriter {
+interface ProtoAstWriter {
 
 /* ---------------------------------------------------------------------------
  * method WriteAst(path, ast)
