@@ -22,7 +22,7 @@
  *
  * @file
  *
- * ProtoAstWriter.java
+ * ProtoDotWriter.java
  *
  * Public interface for AST export to GraphViz DOT.
  *
@@ -59,6 +59,6 @@ public static Result<int /* chars written */, IOStatus>
   WriteDot (String path, ProtoAstNode ast);
 
 
-} /* ProtoAstWriter */
+} /* ProtoDotWriter */
 
 /* END OF FILE */
