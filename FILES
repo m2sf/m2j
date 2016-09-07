@@ -81,6 +81,13 @@ AstNodeType.java
   provides an API for tree node integrity checks
   used by the abstract syntax tree class when creating tree nodes
 
+ProtoJavaReswords.java
+  interface for Java reserved word recogniser class
+
+JavaReswords.cs
+  Java reserved word recogniser class
+  used by code generator to avoid name conflicts in output
+
 ProtoDiagnostics.java
   interface for the diagnostics class
 
