@@ -88,6 +88,13 @@ AstWriter.java
   AST writer class
   writes an AST in S-expression format to a file
 
+ProtoDotWriter.java
+  interface for AST to DOT exporter class
+
+DotWriter.java
+  AST to DOT exporter class
+  writes an AST in GraphViz DOT format to a file
+
 ProtoJavaReswords.java
   interface for Java reserved word recogniser class
 
