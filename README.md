@@ -14,6 +14,6 @@ Java .class files using the host system's resident Java compiler.
 PIM dialects are supported to allow compilation of program examples from
 Modula-2 literature which is largely based on PIM. Extended mode is
 supported to facilitate bootstrapping of a full implementation of
-M2R10 targeting the CLR.
+M2R10 targeting the JVM.
 
 +++
