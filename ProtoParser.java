@@ -48,6 +48,18 @@ package org.m2sf.m2j;
 interface ProtoParser {
 
 /* ---------------------------------------------------------------------------
+ * Parser status codes
+ * ------------------------------------------------------------------------ */
+
+public enum Status {
+  SUCCESS,
+  FILE_NOT_FOUND,
+  FILE_ACCESS_DENIED,
+  TODO
+} /* Status */
+
+
+/* ---------------------------------------------------------------------------
  * method checkSyntaxForDef(filename)
  * ---------------------------------------------------------------------------
  * Syntax checks a Modula-2 .DEF file represented by filename.

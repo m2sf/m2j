@@ -22,9 +22,9 @@
  *
  * @file
  *
- * ProtoDotWriter.java
+ * ASCII.java
  *
- * Public interface for AST export to GraphViz DOT.
+ * ASCII code constants.
  *
  * @license
  *
@@ -45,20 +45,26 @@
 
 package org.m2sf.m2j;
 
-interface ProtoDotWriter {
-
 /* ---------------------------------------------------------------------------
- * method WriteDot(path, ast)
- * ---------------------------------------------------------------------------
- * Writes the given abstract syntax tree in Graphviz DOT format to the given
- * output file at the given path and returns a paired result with the number
- * of characters written and a status code.
+ * ASCII codes used within the compiler.
  * ------------------------------------------------------------------------ */
 
-public Result<Number /* chars written */, IOStatus>
-  WriteDot (String path, ProtoAstNode ast);
-
-
-} /* ProtoDotWriter */
+public class ASCII {
+    
+    /* ASCII NUL is used as a string terminator in M2 strings */
+    
+    public static char NUL = '\u0000';
+    
+    /* ASCII EOT is used to signal the end of a source file */
+    
+    public static char EOT = '\u0004';
+    
+    /* TAB, LR and CRLF are legal within M2 source files */
+    
+    public static char TAB = '\u0009';
+    public static char LF  = '\n';
+    public static char CR  = '\r';
+    
+} /* ASCII */
 
 /* END OF FILE */

@@ -45,16 +45,13 @@
 
 package org.m2sf.m2j;
 
-
-/* Face palm alert: Java doesn't allow interfaces on enums -- use abstract. */
-
-abstract public enum ProtoAstNodeType {
-
 /* ---------------------------------------------------------------------------
  * type AstNodeType
  * ---------------------------------------------------------------------------
  * Enumerated values representing AST node types.
  * ------------------------------------------------------------------------ */
+
+public enum ProtoAstNodeType {
 
   /* Empty Node Type */
   
@@ -201,6 +198,7 @@ abstract public enum ProtoAstNodeType {
   
   AST_INVALID;            /* for use as failure indicator */
 
+} /* ProtoAstNodeType */
 
 /* ---------------------------------------------------------------------------
  * AST node type groupings.
@@ -235,76 +233,5 @@ abstract public enum ProtoAstNodeType {
  * first literal node type : AST_INTVAL
  * last literal node type : AST_QUOTEDVAL
  * ------------------------------------------------------------------------ */
-
-
-/* ---------------------------------------------------------------------------
- * method isValid(nodeType)
- * ---------------------------------------------------------------------------
- * Returns true if nodeType is a valid node type, otherwise false.
- * ------------------------------------------------------------------------ */
-
-abstract public boolean isValid(ProtoAstNodeType nodeType);
-
-
-/* ---------------------------------------------------------------------------
- * method isNonterminalType(nodeType)
- * ---------------------------------------------------------------------------
- * Returns true if nodeType is a nonterminal node type, otherwise false.
- * ------------------------------------------------------------------------ */
-
-abstract public boolean isNonterminalType (ProtoAstNodeType nodeType);
-
-
-/* ---------------------------------------------------------------------------
- * method isTerminalType(nodeType)
- * ---------------------------------------------------------------------------
- * Returns true if nodeType is a terminal node type, otherwise false.
- * ------------------------------------------------------------------------ */
-
-abstract public boolean isTerminalType (ProtoAstNodeType nodeType);
-
-
-/* ---------------------------------------------------------------------------
- * method isListType(nodeType)
- * ---------------------------------------------------------------------------
- * Returns true if nodeType is a list node type, otherwise false.
- * ------------------------------------------------------------------------ */
-
-abstract public boolean isListType (ProtoAstNodeType nodeType);
-
-
-/* ---------------------------------------------------------------------------
- * method isLegalSubnodeCount(nodeType, subnodeCount)
- * ---------------------------------------------------------------------------
- * Returns true if the given subnode count is a legal value for the given
- * node type, otherwise false.
- * ------------------------------------------------------------------------ */
-
-abstract public boolean isLegalSubnodeCount
-  (ProtoAstNodeType nodeType, int SubnodeCount);
-
-
-/* ---------------------------------------------------------------------------
- * method isLegalSubnodeType(inNodeType, subnodeType, index)
- * ---------------------------------------------------------------------------
- * Returns true if the given subnode type is a legal node type for the given
- * index in a node of the given subnode type, otherwise false.
- * ------------------------------------------------------------------------ */
-
-abstract public boolean isLegalSubnodeType
-  (ProtoAstNodeType inNodeType, ProtoAstNodeType subnodeType, int index);
-
-
-/* ---------------------------------------------------------------------------
- * method nameForNodeType(nodeType)
- * ---------------------------------------------------------------------------
- * Returns a string with a human readable name for nodeType or null if the
- * given node type is invalid.
- * ------------------------------------------------------------------------ */
-
-abstract public String nameForNodeType (ProtoAstNodeType nodeType);
-
-
-} /* ProtoNodeType */
 
 /* END OF FILE */

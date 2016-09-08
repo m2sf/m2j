@@ -45,7 +45,7 @@
 
 package org.m2sf.m2j;
 
-import java.util.enumset;
+import java.util.EnumSet;
 
 
 interface ProtoNonTerminals {

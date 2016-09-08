@@ -45,7 +45,7 @@
 
 package org.m2sf.m2j;
 
-import java.util.enumset;
+import java.util.EnumSet;
 
 interface ProtoDiagnostics {
 
@@ -203,9 +203,9 @@ public void emitErrorWithLex
 
 public void emitSyntaxErrorWithToken
   (int line, int column,
-   ProtoTerminal.Token unexpectedToken,
+   ProtoTerminals.Token unexpectedToken,
    String offendingLexeme,
-   ProtoTerminal.Token expectedToken);
+   ProtoTerminals.Token expectedToken);
 
 
 /* ---------------------------------------------------------------------------
@@ -218,9 +218,9 @@ public void emitSyntaxErrorWithToken
 
 public void emitSyntaxErrorWithSet
   (int line, int column,
-   ProtoTerminal.Token unexpectedToken,
+   ProtoTerminals.Token unexpectedToken,
    String offendingLexeme,
-   EnumSet<ProtoTerminal.Token> expectedTokenSet);
+   EnumSet<ProtoTerminals.Token> expectedTokenSet);
 
 
 /* ---------------------------------------------------------------------------

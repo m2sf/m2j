@@ -123,7 +123,7 @@ public enum Token {
  * Returns true if token represents a valid token, otherwise false.
  * ------------------------------------------------------------------------ */
 
-public static boolean isValid (Token token);
+public boolean isValid (Token token);
 
 
 /* ---------------------------------------------------------------------------
@@ -132,7 +132,7 @@ public static boolean isValid (Token token);
  * Returns true if token represents a reserved word, otherwise false.
  * ------------------------------------------------------------------------ */
 
-public static boolean isResword (Token token);
+public boolean isResword (Token token);
 
 
 /* ---------------------------------------------------------------------------
@@ -141,7 +141,7 @@ public static boolean isResword (Token token);
  * Returns true if token represents a literal, otherwise false.
  * ------------------------------------------------------------------------ */
 
-public static boolean isLiteral (Token token);
+public boolean isLiteral (Token token);
 
 
 /* ---------------------------------------------------------------------------
@@ -150,7 +150,7 @@ public static boolean isLiteral (Token token);
  * Returns true if token represents a malformed literal, otherwise false.
  * ------------------------------------------------------------------------ */
 
-public static boolean isMalformedLiteral (Token token);
+public boolean isMalformedLiteral (Token token);
 
 
 /* ---------------------------------------------------------------------------
@@ -159,7 +159,7 @@ public static boolean isMalformedLiteral (Token token);
  * Returns true if token represents a special symbol, otherwise false.
  * ------------------------------------------------------------------------ */
 
-public static boolean isSpecialSymbol (Token token);
+public boolean isSpecialSymbol (Token token);
 
 
 /* ---------------------------------------------------------------------------
@@ -169,7 +169,7 @@ public static boolean isSpecialSymbol (Token token);
  * corresponding token or UNKNOWN if it does not match a reserved word.
  * ------------------------------------------------------------------------ */
 
-public static Token tokenForResword (String lexeme, int length);
+public Token tokenForResword (String lexeme, int length);
 
 
 /* ---------------------------------------------------------------------------
@@ -179,7 +179,7 @@ public static Token tokenForResword (String lexeme, int length);
  * token.  Returns NULL if the token does not represent a reserved word.
  * ------------------------------------------------------------------------ */
 
-public static String lexemeForResword (Token token);
+public String lexemeForResword (Token token);
 
 
 /* ---------------------------------------------------------------------------
@@ -189,7 +189,7 @@ public static String lexemeForResword (Token token);
  * token.  Returns NULL if the token does not represent a special symbol.
  * ------------------------------------------------------------------------ */
 
-public static String lexemeForSpecialSymbol (Token token);
+public String lexemeForSpecialSymbol (Token token);
 
 
 /* ---------------------------------------------------------------------------

@@ -57,6 +57,19 @@ public static int COMMENT_NESTING_LIMIT = 100;
 
 
 /* ---------------------------------------------------------------------------
+ * Lexer status codes
+ * ------------------------------------------------------------------------ */
+
+public enum Status {
+  SUCCESS,
+  FILE_NOT_FOUND,
+  FILE_ACCESS_DENIED,
+  NOT_INITIALIZED,
+  TODO
+} /* Status */
+
+
+/* ---------------------------------------------------------------------------
  * constructor newLexer(filename)
  * ---------------------------------------------------------------------------
  * Creates a new lexer instance, opens an input file, associates the file with
@@ -101,7 +114,7 @@ public Result<ProtoLexer, Status> newLexer (String filename);
  *    and status is set to NOT_INITIALIZED
  * ----------------------------------------------------------------------- */
 
-public Token readSym();
+public ProtoTerminals.Token readSym();
 
 
 /* --------------------------------------------------------------------------
@@ -125,7 +138,7 @@ public Token readSym();
  *    and status is set to NOT_INITIALIZED
  * ----------------------------------------------------------------------- */
 
-public Token nextSym ();
+public ProtoTerminals.Token nextSym ();
 
 
 /* --------------------------------------------------------------------------
@@ -135,7 +148,7 @@ public Token nextSym ();
  * symbol.
  * ----------------------------------------------------------------------- */
 
-public Token consumeSym ();
+public ProtoTerminals.Token consumeSym ();
 
 
 /* --------------------------------------------------------------------------

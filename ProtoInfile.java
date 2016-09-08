@@ -51,8 +51,6 @@ interface ProtoInfile {
  * File size, line and column counter limits
  * ------------------------------------------------------------------------ */
 
-public static char EOT = '\u04'; /* indicating EOF */
-
 public static int INFILE_MAX_SIZE = 260000; /* chars */
 
 public static int INFILE_MAX_LINES = 64000; /* lines */
@@ -61,7 +59,7 @@ public static int INFILE_MAX_COLUMNS = 250; /* columns */
 
 
 /* ---------------------------------------------------------------------------
- * Status codes
+ * Infile status codes
  * ------------------------------------------------------------------------ */
 
 public enum Status {
@@ -192,13 +190,13 @@ public String sourceForLine (int line);
  * Consumes the current lookahead character, advancing the current reading
  * position, updating line and column counter and returns the character code
  * of the new lookahead character that follows the consumed character.
- * Returns EOT if the lookahead character lies beyond the end of infile.
+ * Returns ASCII.EOT if the lookahead character lies beyond the end of infile.
  *
  * pre-conditions:
  * o  infile must be open
  *
  * post-conditions:
- * o  character code of lookahead character or EOT is returned
+ * o  character code of lookahead character or ASCII.EOT is returned
  * o  current reading position and line and column counters are updated
  * o  file status is set to INFILE_STATUS_SUCCESS
  *
@@ -213,7 +211,7 @@ public int consumeChar ();
  * method nextChar()
  * ---------------------------------------------------------------------------
  * Reads the lookahead character from infile without advancing the current
- * reading position and returns its character code.  Returns EOT if the
+ * reading position and returns its character code.  Returns ASCII.EOT if the
  * lookahead character lies beyond the end of infile.
  *
  * pre-conditions:
@@ -235,14 +233,14 @@ public int nextChar ();
  * method la2Char()
  * ---------------------------------------------------------------------------
  * Reads the second lookahead character from infile without advancing the
- * current reading position and returns its character code.  Returns EOT
+ * current reading position and returns its character code.  Returns ASCII.EOT
  * if the second lookahead character lies beyond the end of infile.
  *
  * pre-conditions:
  * o  infile must be open
  *
  * post-conditions:
- * o  character code of second lookahead character or EOT is returned
+ * o  character code of second lookahead character or ASCII.EOT is returned
  * o  current reading position and line and column counters are NOT updated
  * o  file status is set to INFILE_STATUS_SUCCESS
  *
@@ -275,7 +273,8 @@ public Status status ();
  * method eof()
  * ---------------------------------------------------------------------------
  * Returns true if the current reading position of infile lies beyond the end
- * of the associated file, returns false otherwise.
+ * of the associated file, returns false otherwise. This method should be
+ * called whenever ASCII.EOT is read to ascertain that EOF has been reached.
  * ------------------------------------------------------------------------ */
 
 public boolean eof ();

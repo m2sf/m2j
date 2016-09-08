@@ -45,8 +45,17 @@
 
 package org.m2sf.m2j;
 
-
 interface ProtoAstNode {
+
+/* ---------------------------------------------------------------------------
+ * AstNode status codes
+ * ------------------------------------------------------------------------ */
+
+public enum Status {
+  SUCCESS,
+  TODO
+} /* Status */
+
 
 /* ---------------------------------------------------------------------------
  * method emptyNode()
@@ -54,7 +63,7 @@ interface ProtoAstNode {
  * Returns the empty node singleton.
  * ------------------------------------------------------------------------ */
 
-public static final Result<ProtoAstNode, Status> emptyNode ();
+public Result<ProtoAstNode, Status> emptyNode ();
 
 
 /* ---------------------------------------------------------------------------
@@ -139,7 +148,7 @@ public int subnodeCountOf(ProtoAstNode node);
  * the given index is stored in node.
  * ------------------------------------------------------------------------ */
 
-public Result<ProtoAstNode, status>
+public Result<ProtoAstNode, Status>
   subnodeForIndex(ProtoAstNode node, int index);
 
 
