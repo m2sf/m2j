@@ -16,4 +16,7 @@ Modula-2 literature which is largely based on PIM. Extended mode is
 supported to facilitate bootstrapping of a full implementation of
 M2R10 targeting the JVM.
 
+For more information please visit the project wiki at the URL below:
+https://github.com/m2sf/m2j/wiki
+
 +++
