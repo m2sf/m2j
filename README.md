@@ -1,4 +1,7 @@
 # m2j
+
+[![Join the chat at https://gitter.im/m2bsk/Lobby](https://badges.gitter.im/m2bsk/Lobby.svg)](https://gitter.im/m2bsk/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Modula-2 to Java Translator and Compiler
 
 M2J is a multi-dialect Modula-2 to Java translator and via-Java compiler.
